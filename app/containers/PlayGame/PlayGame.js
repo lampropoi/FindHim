@@ -6,10 +6,10 @@ import {
   Image
 } from 'react-native';
 import Button from '../../components/Button/Button';
-import playgameBackground from '../../assets/Lady/playgameBackground.png';
-import winningCard from '../../assets/Lady/winnerCard.png';
-import loserCard from '../../assets/Lady/loserCard.png';
-import loserCard_ from '../../assets/Lady/loserCard_.png';
+import playgameBackground from '../../assets/Winnie/playgameBackground.png';
+import winningCard from '../../assets/Winnie/winnerCard.png';
+import loserCard from '../../assets/Winnie/loserCard.png';
+import loserCard_ from '../../assets/Winnie/loserCard_.png';
 import * as Animatable from 'react-native-animatable';
 import config from '../../config';
 
@@ -31,10 +31,10 @@ class PlayGame extends Component {
   }
 
   /**
-   * The constructor of Welcome View
+   * Initialization
    **/
 
-  async componentWillMount(){
+  async componentWillMount() {
     const max = 3;
     const min = 1;
     setTimeout(() => {
@@ -50,6 +50,10 @@ class PlayGame extends Component {
     }, 2000);
   }
 
+  /**
+   * Checks the card pressed
+   * @param {object} data card pressed
+   **/
   foundHim(data) {
     let result;
     if (data.position === this.state.position) {
@@ -77,7 +81,10 @@ class PlayGame extends Component {
     if (this.state.position && !this.state.clicked) {
       return(
         <View style={styles.containerLoading}>
-         <Text style={styles.result}>Press a card!</Text>
+          <Animatable.Text animation="pulse"
+            easing="ease-out"
+            iterationCount="infinite"
+            style={styles.result}>Press a card!</Animatable.Text>
           <Animatable.View animation="fadeInLeftBig" delay={100} style={styles.card1}>
             <Button type='card' text= '1' data={{position: 1}} onPress={this.foundHim.bind(this)}/>
           </Animatable.View>

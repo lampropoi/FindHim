@@ -1,5 +1,5 @@
 export default () => {
   return {
-    mode: 'Lady'
+    mode: 'Winnie'
   };
 };

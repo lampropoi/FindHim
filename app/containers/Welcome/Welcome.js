@@ -4,7 +4,7 @@ import {
   Image,
   StyleSheet
 } from 'react-native';
-import backgroundImage from '../../assets/Lady/background.png';
+import backgroundImage from '../../assets/Winnie/background.png';
 import Button from '../../components/Button/Button';
 import config from '../../config';
 
